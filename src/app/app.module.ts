@@ -6,9 +6,9 @@ import {AppComponent} from './app.component';
 import {UsersComponent} from './users/users.component';
 import {UserService} from './shared/services/user.service';
 import {ApiService} from './shared/services/api';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
 import {ToasterModule} from 'angular2-toaster';
+import {SharedModule} from './shared/modules/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -18,10 +18,9 @@ import {ToasterModule} from 'angular2-toaster';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        HttpClientModule,
         ToasterModule.forRoot(),
+        SharedModule,
+        BrowserAnimationsModule
     ],
     providers: [
         ApiService,

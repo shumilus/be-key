@@ -1,4 +1,4 @@
-## Preparation & Installation
+ ## Preparation & Installation
   - sudo npm i -g typescript
   - sudo npm i -g @angular/cli
   - brew install yarn

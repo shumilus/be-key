@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ToasterConfig} from 'angular2-toaster';
 import {UserService} from './shared/services/user.service';
 import {ApiService} from './shared/services/api';
-import {el} from '@angular/platform-browser/testing/src/browser_util';
 
 /**
  * @summary Api component
