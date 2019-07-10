@@ -4791,10 +4791,10 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-ngx-pagination@^3.2.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/ngx-pagination/-/ngx-pagination-3.3.1.tgz#2dab7171c38c1b326571c4353a524d4614e28fa3"
-  integrity sha512-ocDJrdxFiij1XVWhY4uwpiJevvgluvm4qe7xZRRVGHpzjkxQIJCQbSRkQXWYjXorV/Xre79dMDKmXKHvlxEqcA==
+ngx-pagination@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-pagination/-/ngx-pagination-4.0.0.tgz#c1ca766e0277d20c5bb3871ba7007dbcbafc56d2"
+  integrity sha512-+JKUykZicQ2ZEyWZ0Y1d2ffocUWZqooeWrSbZ4IGlPreAazlmhG4Ms6FY0KjcnslpvbQuA/9ARY5sF14q04/AA==
 
 nice-try@^1.0.4:
   version "1.0.5"

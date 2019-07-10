@@ -1,1 +1,7 @@
-<p>{{user.name}}</p>
+<div class="user-container flex between align-center" (click)="openUserInfo()">
+    <p class="name">{{user.name}}</p>
+    <div class="btn-wrap flex center align-center"
+         (click)="deleteUser($event)">
+        <div class="delete-btn"></div>
+    </div>
+</div>

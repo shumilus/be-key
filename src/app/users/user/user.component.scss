@@ -1,0 +1,40 @@
+@import "../../shared/styles/style-variables";
+
+.user-container {
+  padding: 0 30px;
+  cursor: pointer;
+
+  .name {
+    font-size: 20px;
+    font-family: $mainFont;
+  }
+
+  .btn-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    .delete-btn {
+      width: 24px;
+      height: 24px;
+      background: url("../../../assets/imgs/delete/delete_passive.svg") no-repeat;
+      background-size: contain;
+      &:hover {
+        background: url("../../../assets/imgs/delete/delete_hover.svg") no-repeat;
+        background-size: contain;
+      }
+      &:active {
+        background: url("../../../assets/imgs/delete/delete_passive.svg") no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: #f4f4f4;
+  }
+
+  &:active {
+    background-color: $whiteColor;
+  }
+}

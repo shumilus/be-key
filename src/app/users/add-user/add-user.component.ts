@@ -40,9 +40,13 @@ export class AddUserComponent implements OnInit {
    */
   initUserForm() {
     this.userForm = new FormGroup({
+      id: new FormControl(null, [Validators.required]),
       name: new FormControl(null, [Validators.required]),
+      age: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.email, Validators.required]),
       phone: new FormControl(null, [Validators.required]),
+      address: new FormControl(null, [Validators.required]),
+      about: new FormControl(null, [Validators.required]),
     });
   }
 
@@ -50,12 +54,21 @@ export class AddUserComponent implements OnInit {
    * @summary Add new user
    */
   addUser() {
-    this.userService.addUser(this.userForm.value)
+    const date = new Date();
+    this.userService.addUser({...this.userForm.value, registered: date})
         .pipe(finalize(() => this.disabled = !this.disabled))
-        .subscribe((res: User) => {
-          this.dialog.closeAll();
-          this.toaster.pop('success', 'Added new user');
+        .subscribe((users: User[]) => {
+          this.userService.setUsers(users);
+          this.cancel();
+          this.toaster.pop('success', 'New user added');
         });
+  }
+
+  /**
+   * @summary Close modal window
+   */
+  cancel() {
+    this.dialog.closeAll();
   }
 
 }

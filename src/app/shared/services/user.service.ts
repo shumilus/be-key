@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {ApiService} from './api.service';
 import {User} from '../interfaces/user';
@@ -9,6 +9,8 @@ import {User} from '../interfaces/user';
  */
 @Injectable()
 export class UserService {
+    usersSubject = new Subject();
+    users: User [];
 
     /**
      * @summary User service constructor
@@ -27,15 +29,36 @@ export class UserService {
     /**
      * @summary Get users list from server
      */
-    getUsers(): Observable<any> {
+    getUsers() {
         return this.apiService.get('/users.json');
+    }
+
+    /**
+     * @summary Set users changing
+     * @param users - users list
+     */
+    setUsers(users: User []) {
+        this.usersSubject.next(users);
+        this.users = users;
     }
 
     /**
      * @summary Get users list
      * @param user - new user
      */
-    addUser(user: User): Observable<User> {
-        return this.apiService.post('/users.json', user);
+    addUser(user: User): Observable <any> {
+        const users = [...this.users];
+        users.push(user);
+        return this.apiService.put('/users.json', users);
+    }
+
+    /**
+     * @summary Set users changing
+     * @summary index - index of user item in list;
+     */
+    deleteUser(index: number) {
+        const users = [...this.users];
+        users.splice(index, 1);
+        return this.apiService.put('/users.json', users);
     }
 }

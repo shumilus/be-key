@@ -1,9 +1,18 @@
 <div class="users-container">
-  <div *ngFor="let userEl of users; trackBy: trackByFn">
-      <app-user [user]="userEl"></app-user>
-  </div>
-  <button class="add-btn"
-          mat-raised-button
-          color="primary"
-          (click)="openAddUser()">Add user</button>
+    <p class="title">Users</p>
+    <div *ngFor="let userEl of users; trackBy: trackByFn; let i = index">
+        <app-user [user]="userEl"
+                  [index]="i">
+        </app-user>
+    </div>
+    <div class="pagination flex align-center center" *ngIf="users?.length > 2">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+    <div class="flex center">
+        <button class="add-btn"
+                mat-raised-button
+                color="primary"
+                (click)="openAddUser()">Add user
+        </button>
+    </div>
 </div>

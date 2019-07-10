@@ -11,13 +11,15 @@ import {SharedModule} from './shared/modules/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { UserComponent } from './users/user/user.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
+import { UserInfoComponent } from './users/user-info/user-info.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         UsersComponent,
         UserComponent,
-        AddUserComponent
+        AddUserComponent,
+        UserInfoComponent
     ],
     imports: [
         BrowserModule,
@@ -34,7 +36,8 @@ import { AddUserComponent } from './users/add-user/add-user.component';
         CUSTOM_ELEMENTS_SCHEMA
     ],
     entryComponents: [
-        AddUserComponent
+        AddUserComponent,
+        UserInfoComponent
     ],
     bootstrap: [AppComponent]
 })

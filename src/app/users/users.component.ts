@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {UserService} from '../shared/services/user.service';
 import {User} from '../shared/interfaces/user';
 import {MatDialog} from '@angular/material';
 import {AddUserComponent} from './add-user/add-user.component';
+import {Subscription} from 'rxjs';
 
 /**
  * @summary Users component
@@ -12,8 +13,10 @@ import {AddUserComponent} from './add-user/add-user.component';
     templateUrl: './users.component.html',
     styleUrls: ['./users.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, OnDestroy {
+    subscription = new Subscription();
     users: User [];
+    page = 1;
     /**
      * @summary Users component constructor
      * @param userService - User service
@@ -28,22 +31,27 @@ export class UsersComponent implements OnInit {
      */
     ngOnInit() {
         this.getUsers();
+        this.subscription.add(this.userService.usersSubject
+            .subscribe((users: User []) => {
+                    this.users = users;
+                }
+            ));
     }
 
     /**
      * @summary Get users list from server
      */
     getUsers() {
-        this.userService.getUsers()
-            .subscribe(res => {
+         this.userService.getUsers()
+            .subscribe((users: {any} ) => {
                 const fetchedUsers = [];
-                for (const key in res) {
+                for (const key in users) {
                     fetchedUsers.push({
-                        ...res[key],
+                        ...users[key],
                         id: key
                     });
                 }
-                this.users = fetchedUsers;
+                this.userService.setUsers(fetchedUsers);
             });
     }
 
@@ -53,14 +61,23 @@ export class UsersComponent implements OnInit {
     openAddUser() {
         this.dialog.open(AddUserComponent, {
             width: '480px',
-            height: '530px',
+            height: '730px',
             autoFocus: false,
             panelClass: 'popup-modal'
         });
     }
 
+    /**
+     * @summary Track of changing users list
+     */
     trackByFn(index: number, user: User) {
         return user.id;
     }
 
+    /**
+     * @summary Cleanup logic
+     */
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
 }

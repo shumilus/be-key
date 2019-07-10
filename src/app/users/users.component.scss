@@ -1,7 +1,28 @@
+@import "../shared/styles/style-variables";
+
 .users-container {
+  width: 70%;
+  border: 2px solid purple;
+  border-radius: 15px;
+  margin: 0 auto;
+  background-color: $whiteColor;
+  padding: 30px 0;
+
+  .title {
+    font-size: 24px;
+    font-family: $mainFont;
+    text-align: center;
+    color: purple;
+    text-decoration: underline;
+    margin-bottom: 20px;
+  }
+
+  .pagination {
+    height: 40px;
+  }
 
   .add-btn {
     width: 200px;
-    margin:20px;
+    margin:40px;
   }
 }

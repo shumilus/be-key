@@ -1,0 +1,28 @@
+@import "../../shared/styles/style-variables";
+
+.user-info-container {
+
+  .img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid purple;
+    margin: 20px;
+  }
+
+  .info {
+    margin: 5px;
+
+    .title {
+      margin-right: 20px;
+      font-family: $mainFont;
+      font-size: 18px;
+    }
+
+    .text {
+      font-family: $textFont;
+      font-size: 16px;
+    }
+  }
+
+
+}
