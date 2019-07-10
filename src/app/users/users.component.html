@@ -1,18 +1,37 @@
 <div class="users-container">
     <p class="title">Users</p>
-    <div *ngFor="let userEl of users; trackBy: trackByFn; let i = index">
-        <app-user [user]="userEl"
-                  [index]="i">
-        </app-user>
+
+    <div class="filter-block flex between align-center">
+        <div class="input-block">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Search by name"
+                       type="text"
+                       [(ngModel)]="search">
+            </mat-form-field>
+        </div>
+        <button class="sort-btn" [ngClass]="{'active': sortName === 'name'}" (click)="sortByName()">sort</button>
     </div>
-    <div class="pagination flex align-center center" *ngIf="users?.length > 2">
-        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+    <div class="list-container">
+        <div *ngFor="let userEl of users
+         | paginate: { itemsPerPage: 5, currentPage: page}
+         | sortName: sortName
+         | search: search:'name';
+         trackBy: trackByFn; let i = index">
+            <app-user [user]="userEl"
+                      [index]="i">
+            </app-user>
+        </div>
+        <div class="pagination flex align-center center" *ngIf="users?.length > 2">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
     </div>
     <div class="flex center">
         <button class="add-btn"
                 mat-raised-button
                 color="primary"
-                (click)="openAddUser()">Add user
+                (click)="openAddUser()">add user
         </button>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {User} from '../../shared/interfaces/user';
 import {UserService} from '../../shared/services/user.service';
 import {ToasterService} from 'angular2-toaster';
@@ -11,7 +11,8 @@ import {UserInfoComponent} from '../user-info/user-info.component';
 @Component({
     selector: 'app-user',
     templateUrl: './user.component.html',
-    styleUrls: ['./user.component.scss']
+    styleUrls: ['./user.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class UserComponent implements OnInit {

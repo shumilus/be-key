@@ -17,6 +17,8 @@ export class UsersComponent implements OnInit, OnDestroy {
     subscription = new Subscription();
     users: User [];
     page = 1;
+    search: string;
+    sortName: string;
     /**
      * @summary Users component constructor
      * @param userService - User service
@@ -72,6 +74,13 @@ export class UsersComponent implements OnInit, OnDestroy {
      */
     trackByFn(index: number, user: User) {
         return user.id;
+    }
+
+    /**
+     * @summary Sort users list by name
+     */
+    sortByName() {
+        this.sortName =  this.sortName === 'name' ? '' : 'name';
     }
 
     /**

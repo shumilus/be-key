@@ -14,8 +14,7 @@ Navigate to `http://localhost:4200/`.
 
 `ng build` - test environment <br>
 `ng build --prod --aot` - production environment <br>
-`ng build -c staging` - production environment <br>
-<b>The build artifacts will be stored in the `dist/eis-front` directory.</b>
+<b>The build artifacts will be stored in the `dist/be-key` directory.</b>
 
 ## Generate documentation
 
