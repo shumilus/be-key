@@ -19,9 +19,7 @@
          | sortName: sortName
          | search: search:'name';
          trackBy: trackByFn; let i = index">
-            <app-user [user]="userEl"
-                      [index]="i">
-            </app-user>
+            <app-user [user]="userEl"></app-user>
         </div>
         <div class="pagination flex align-center center" *ngIf="users?.length > 2">
             <pagination-controls (pageChange)="page = $event"></pagination-controls>

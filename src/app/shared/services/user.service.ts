@@ -3,6 +3,7 @@ import {Observable, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {ApiService} from './api.service';
 import {User} from '../interfaces/user';
+import {forEach} from '@angular/router/src/utils/collection';
 
 /**
  * @summary Users service
@@ -54,11 +55,16 @@ export class UserService {
 
     /**
      * @summary Set users changing
-     * @summary index - index of user item in list;
+     * @summary id - user id
      */
-    deleteUser(index: number) {
+    deleteUser(id: string) {
         const users = [...this.users];
-        users.splice(index, 1);
+        users.forEach((user, index) => {
+            if (user.id === id) {
+                users.splice(index, 1);
+            }
+        });
+
         return this.apiService.put('/users.json', users);
     }
 }

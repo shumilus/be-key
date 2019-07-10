@@ -17,7 +17,6 @@ import {UserInfoComponent} from '../user-info/user-info.component';
 
 export class UserComponent implements OnInit {
     @Input() user: User;
-    @Input() index: number;
 
     /**
      * @summary Users component constructor
@@ -42,7 +41,7 @@ export class UserComponent implements OnInit {
      */
     deleteUser(event: any) {
         event.stopPropagation();
-        this.userService.deleteUser(this.index)
+        this.userService.deleteUser(this.user.id)
             .subscribe( (users: User []) => {
                 this.userService.setUsers(users);
                 this.toaster.pop('success', 'User Deleted');
