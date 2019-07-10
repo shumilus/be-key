@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {ApiService} from './api';
+import {ApiService} from './api.service';
+import {User} from '../interfaces/user';
 
 /**
  * @summary Users service
@@ -28,5 +29,13 @@ export class UserService {
      */
     getUsers(): Observable<any> {
         return this.apiService.get('/users.json');
+    }
+
+    /**
+     * @summary Get users list
+     * @param user - new user
+     */
+    addUser(user: User): Observable<User> {
+        return this.apiService.post('/users.json', user);
     }
 }

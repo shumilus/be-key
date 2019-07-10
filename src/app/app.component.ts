@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ToasterConfig} from 'angular2-toaster';
 import {UserService} from './shared/services/user.service';
-import {ApiService} from './shared/services/api';
+import {ApiService} from './shared/services/api.service';
 
 /**
  * @summary Api component

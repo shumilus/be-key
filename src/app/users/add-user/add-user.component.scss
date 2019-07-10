@@ -1,0 +1,28 @@
+@import "../../shared/styles/style-variables";
+
+.add-user-container {
+
+  .title {
+    font-family: $mainFont;
+    font-size: 20px;
+    text-align: center;
+    color: $textFont;
+  }
+
+  .input-block {
+    width: 70%;
+    margin: 20px auto;
+  }
+  .btn-wrap {
+
+    .add-btn {
+      width: 200px;
+      margin:20px;
+    }
+  }
+
+}
+
+mat-form-field {
+  width: 100%;
+}

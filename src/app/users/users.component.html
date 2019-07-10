@@ -1,4 +1,9 @@
-
-<div>
-  <p *ngFor="let user of users">{{user.name}}</p>
+<div class="users-container">
+  <div *ngFor="let userEl of users; trackBy: trackByFn">
+      <app-user [user]="userEl"></app-user>
+  </div>
+  <button class="add-btn"
+          mat-raised-button
+          color="primary"
+          (click)="openAddUser()">Add user</button>
 </div>
