@@ -11,7 +11,8 @@ import {MAT_DIALOG_DATA} from '@angular/material';
     styleUrls: ['./user-info.component.scss']
 })
 
-export class UserInfoComponent implements OnInit {
+export class UserInfoComponent {
+    inputs = ['name', 'registered', 'age', 'email', 'phone', 'address', 'balance', 'tags', 'about'];
 
     /**
      * @summary User-info component constructor
@@ -20,11 +21,4 @@ export class UserInfoComponent implements OnInit {
     constructor(@Inject(MAT_DIALOG_DATA)
                 public user: User) {
     }
-
-    /**
-     * @summary Run when User component init
-     */
-    ngOnInit() {
-    }
-
 }
