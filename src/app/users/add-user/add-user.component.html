@@ -1,127 +1,127 @@
 <div class="add-user-container">
-  <p class="title">Add information</p>
-  <div class="form-wrap">
-    <form [formGroup]="userForm" (ngSubmit)="addUser()">
-      <div class="input-block">
-        <mat-form-field>
-          <input matInput
-                 required
-                 placeholder="Id"
-                 formControlName="id"
-                 type="text">
-          <mat-error *ngIf="!userForm.get('id').valid && userForm.get('id').value">
-            Id enter a valid ID
-          </mat-error>
-          <mat-error *ngIf="!userForm.get('id').value">
-            Id is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="input-block">
-        <mat-form-field>
-          <input matInput
-                 required
-                 placeholder="Name"
-                 formControlName="name"
-                 type="text">
-          <mat-error *ngIf="!userForm.get('name').valid && userForm.get('name').value">
-            Please enter a valid Name
-          </mat-error>
-          <mat-error *ngIf="!userForm.get('name').value">
-            Name is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
+    <p class="title">Add information</p>
+    <div class="form-wrap">
+        <form [formGroup]="userForm" (ngSubmit)="addUser()">
+            <div class="input-block">
+                <mat-form-field>
+                    <input matInput
+                           required
+                           placeholder="Id"
+                           formControlName="id"
+                           type="text">
+                    <mat-error *ngIf="!userForm.get('id').valid && userForm.get('id').value">
+                        Id enter a valid ID
+                    </mat-error>
+                    <mat-error *ngIf="!userForm.get('id').value">
+                        Id is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="input-block">
+                <mat-form-field>
+                    <input matInput
+                           required
+                           placeholder="Name"
+                           formControlName="name"
+                           type="text">
+                    <mat-error *ngIf="!userForm.get('name').valid && userForm.get('name').value">
+                        Please enter a valid Name
+                    </mat-error>
+                    <mat-error *ngIf="!userForm.get('name').value">
+                        Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
 
-      <div class="input-block">
-        <mat-form-field>
-          <input matInput
-                 required
-                 placeholder="Age"
-                 formControlName="age"
-                 type="text">
-          <mat-error *ngIf="!userForm.get('age').valid && userForm.get('age').value">
-            Please enter a valid Age
-          </mat-error>
-          <mat-error *ngIf="!userForm.get('age').value">
-            Age is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="input-block">
-        <mat-form-field>
-          <input matInput
-                 required
-                 pattern="(?=.*[.]).*$"
-                 placeholder="E-mail"
-                 formControlName="email"
-                 type="email">
-          <mat-error *ngIf="!userForm.get('email').valid && userForm.get('email').value">
-            Please enter a valid Email address
-          </mat-error>
-          <mat-error *ngIf="!userForm.get('email').value">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="input-block">
-        <mat-form-field>
-          <input matInput
-                 required
-                 placeholder="Phone"
-                 formControlName="phone"
-                 type="text">
-          <mat-error *ngIf="!userForm.get('phone').valid && userForm.get('phone').value">
-            Please enter a valid Phone
-          </mat-error>
-          <mat-error *ngIf="!userForm.get('phone').value">
-            Phone is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-
-      <div class="input-block">
-        <mat-form-field>
-          <input matInput
-                 required
-                 placeholder="Address"
-                 formControlName="address"
-                 type="email">
-          <mat-error *ngIf="!userForm.get('address').valid && userForm.get('address').value">
-            Please enter a valid Address
-          </mat-error>
-          <mat-error *ngIf="!userForm.get('address').value">
-            Address is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="input-block">
-        <mat-form-field>
-          <input matInput
-                 required
-                 placeholder="About"
-                 formControlName="about"
-                 type="text">
-          <mat-error *ngIf="!userForm.get('about').valid && userForm.get('about').value">
-            About enter a valid About info
-          </mat-error>
-          <mat-error *ngIf="!userForm.get('about').value">
-            About is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="btn-wrap flex center">
-        <button class="add-btn"
-                [disabled]="!userForm.valid || disabled"
-                color="primary"
-                mat-raised-button
-                type="submit">Add
-        </button>
-        <button class="add-btn"
-                mat-raised-button
-                type="button"
-                (click)="cancel()">Cancel</button>
-      </div>
-    </form>
-  </div>
+            <div class="input-block">
+                <mat-form-field>
+                    <input matInput
+                           required
+                           placeholder="Age"
+                           formControlName="age"
+                           type="text">
+                    <mat-error *ngIf="!userForm.get('age').valid && userForm.get('age').value">
+                        Please enter a valid Age
+                    </mat-error>
+                    <mat-error *ngIf="!userForm.get('age').value">
+                        Age is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="input-block">
+                <mat-form-field>
+                    <input matInput
+                           required
+                           pattern="(?=.*[.]).*$"
+                           placeholder="E-mail"
+                           formControlName="email"
+                           type="email">
+                    <mat-error *ngIf="!userForm.get('email').valid && userForm.get('email').value">
+                        Please enter a valid Email address
+                    </mat-error>
+                    <mat-error *ngIf="!userForm.get('email').value">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="input-block">
+                <mat-form-field>
+                    <input matInput
+                           required
+                           placeholder="Phone"
+                           formControlName="phone"
+                           type="text">
+                    <mat-error *ngIf="!userForm.get('phone').valid && userForm.get('phone').value">
+                        Please enter a valid Phone
+                    </mat-error>
+                    <mat-error *ngIf="!userForm.get('phone').value">
+                        Phone is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="input-block">
+                <mat-form-field>
+                    <input matInput
+                           required
+                           placeholder="Address"
+                           formControlName="address"
+                           type="email">
+                    <mat-error *ngIf="!userForm.get('address').valid && userForm.get('address').value">
+                        Please enter a valid Address
+                    </mat-error>
+                    <mat-error *ngIf="!userForm.get('address').value">
+                        Address is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="input-block">
+                <mat-form-field>
+                    <input matInput
+                           required
+                           placeholder="About"
+                           formControlName="about"
+                           type="text">
+                    <mat-error *ngIf="!userForm.get('about').valid && userForm.get('about').value">
+                        About enter a valid About info
+                    </mat-error>
+                    <mat-error *ngIf="!userForm.get('about').value">
+                        About is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="btn-wrap flex center">
+                <button class="add-btn"
+                        [disabled]="!userForm.valid || disabled"
+                        color="primary"
+                        mat-raised-button
+                        type="submit">Add
+                </button>
+                <button class="add-btn"
+                        mat-raised-button
+                        type="button"
+                        (click)="cancel()">Cancel
+                </button>
+            </div>
+        </form>
+    </div>
 </div>

@@ -1,17 +1,22 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {ToasterModule} from 'angular2-toaster';
 
+// Modules
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {UsersComponent} from './users/users.component';
+import {SharedModule} from './shared/modules/shared.module';
+
+// Service
 import {UserService} from './shared/services/user.service';
 import {ApiService} from './shared/services/api.service';
-import {ToasterModule} from 'angular2-toaster';
-import {SharedModule} from './shared/modules/shared.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { UserComponent } from './users/user/user.component';
-import { AddUserComponent } from './users/add-user/add-user.component';
-import { UserInfoComponent } from './users/user-info/user-info.component';
+
+// Components
+import {AppComponent} from './app.component';
+import {UsersComponent} from './users/users.component';
+import {UserComponent} from './users/user/user.component';
+import {AddUserComponent} from './users/add-user/add-user.component';
+import {UserInfoComponent} from './users/user-info/user-info.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +34,6 @@ import { UserInfoComponent } from './users/user-info/user-info.component';
         BrowserAnimationsModule
     ],
     providers: [
-        ApiService,
         UserService
     ],
     schemas: [
@@ -41,5 +45,6 @@ import { UserInfoComponent } from './users/user-info/user-info.component';
     ],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

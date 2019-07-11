@@ -19,10 +19,12 @@
       height: 24px;
       background: url("../../../assets/imgs/delete/delete_passive.svg") no-repeat;
       background-size: contain;
+
       &:hover {
         background: url("../../../assets/imgs/delete/delete_hover.svg") no-repeat;
         background-size: contain;
       }
+
       &:active {
         background: url("../../../assets/imgs/delete/delete_passive.svg") no-repeat;
         background-size: contain;

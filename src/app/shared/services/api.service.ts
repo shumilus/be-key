@@ -8,7 +8,9 @@ import {Toast, ToasterService} from 'angular2-toaster';
 import {catchError} from 'rxjs/internal/operators';
 import {environment} from '../../../environments/environment';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class ApiService {
     url = environment.host;
 
@@ -97,24 +99,6 @@ export class ApiService {
         params = this.convertQueryParams(params);
         return this.http.post(`${this.url}${path}`,
             body, {headers: this.setHeaders(), responseType: responseType, params, observe: observe})
-            .pipe(catchError((error) => this.formatErrors(error)));
-    }
-
-
-    delete(path, params?: any, body?: Object): Observable<any> {
-        const options = {
-            headers: this.setHeaders(),
-            body: body,
-            params: this.convertQueryParams(params)
-        };
-        return this.http.delete(`${this.url}${path}`, options)
-            .pipe(catchError((error) => this.formatErrors(error)));
-    }
-
-    patch(path: string, body: Object = {}, params?: any, responseType: any = 'json'): Observable<any> {
-        params = this.convertQueryParams(params);
-        return this.http.patch(`${this.url}${path}`,
-            JSON.stringify(body), {headers: this.setHeaders(), responseType: responseType, params})
             .pipe(catchError((error) => this.formatErrors(error)));
     }
 }

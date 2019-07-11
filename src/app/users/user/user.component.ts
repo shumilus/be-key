@@ -1,9 +1,9 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {User} from '../../shared/interfaces/user';
-import {UserService} from '../../shared/services/user.service';
 import {ToasterService} from 'angular2-toaster';
 import {MatDialog} from '@angular/material';
+import {UserService} from '../../shared/services/user.service';
 import {UserInfoComponent} from '../user-info/user-info.component';
+import {User} from '../../shared/interfaces/user';
 
 /**
  * @summary User component
@@ -42,7 +42,7 @@ export class UserComponent implements OnInit {
     deleteUser(event: any) {
         event.stopPropagation();
         this.userService.deleteUser(this.user.id)
-            .subscribe( (users: User []) => {
+            .subscribe((users: User []) => {
                 this.userService.setUsers(users);
                 this.toaster.pop('success', 'User Deleted');
             });

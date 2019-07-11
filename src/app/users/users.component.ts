@@ -1,9 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {UserService} from '../shared/services/user.service';
-import {User} from '../shared/interfaces/user';
-import {MatDialog} from '@angular/material';
-import {AddUserComponent} from './add-user/add-user.component';
 import {Subscription} from 'rxjs';
+import {MatDialog} from '@angular/material';
+
+import {UserService} from '../shared/services/user.service';
+import {AddUserComponent} from './add-user/add-user.component';
+import {User} from '../shared/interfaces/user';
 
 /**
  * @summary Users component
@@ -19,6 +20,7 @@ export class UsersComponent implements OnInit, OnDestroy {
     page = 1;
     search: string;
     sortName: string;
+
     /**
      * @summary Users component constructor
      * @param userService - User service
@@ -44,8 +46,8 @@ export class UsersComponent implements OnInit, OnDestroy {
      * @summary Get users list from server
      */
     getUsers() {
-         this.userService.getUsers()
-            .subscribe((users: {any} ) => {
+        this.userService.getUsers()
+            .subscribe((users: { any }) => {
                 const fetchedUsers = [];
                 for (const key in users) {
                     fetchedUsers.push({
@@ -80,7 +82,7 @@ export class UsersComponent implements OnInit, OnDestroy {
      * @summary Sort users list by name
      */
     sortByName() {
-        this.sortName =  this.sortName === 'name' ? '' : 'name';
+        this.sortName = this.sortName === 'name' ? '' : 'name';
     }
 
     /**

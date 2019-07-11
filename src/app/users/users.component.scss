@@ -1,6 +1,9 @@
 @import "../shared/styles/style-variables";
 
 .users-container {
+  height: 100%;
+  background-color: #f4f4f4;
+
   .title {
     font-size: 26px;
     font-family: $mainFont;
@@ -33,9 +36,11 @@
       &:hover {
         background-color: purple;
       }
+
       &:active {
         background-color: #FFFFFF;
       }
+
       &.active {
         background-color: purple;
       }

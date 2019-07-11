@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxPaginationModule} from 'ngx-pagination';
+
 import {ShortenWordPipe} from '../pipes/shorten-word.pipe';
 import {SortNamePipe} from '../pipes/sort-name.pipe';
 import {SearchPipe} from '../pipes/search.pipe';

@@ -47,14 +47,15 @@ export class AppComponent implements OnInit {
      * @summary Check if faribase data is empty
      */
     setData(response: any) {
-       return this.apiService.get('/users.json')
-           .subscribe(res => {
-               if (!res) {
-                   response.forEach((item => {
-                       this.apiService.post('/users.json', item)
-                           .subscribe(() => {});
-                   }));
-               }
-           });
+        return this.apiService.get('/users.json')
+            .subscribe(res => {
+                if (!res) {
+                    response.forEach((item => {
+                        this.apiService.post('/users.json', item)
+                            .subscribe(() => {
+                            });
+                    }));
+                }
+            });
     }
 }

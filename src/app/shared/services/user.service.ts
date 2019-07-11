@@ -3,7 +3,6 @@ import {Observable, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {ApiService} from './api.service';
 import {User} from '../interfaces/user';
-import {forEach} from '@angular/router/src/utils/collection';
 
 /**
  * @summary Users service
@@ -47,7 +46,7 @@ export class UserService {
      * @summary Get users list
      * @param user - new user
      */
-    addUser(user: User): Observable <any> {
+    addUser(user: User): Observable<any> {
         const users = [...this.users];
         users.push(user);
         return this.apiService.put('/users.json', users);
